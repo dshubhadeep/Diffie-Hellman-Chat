@@ -1,11 +1,16 @@
 body{
     font-family: 'Nunito';
+    color: white;
 }
 
 h2{
     font-size: 18px;
     padding: 10px 20px;
     color: #575ed8;
+}
+
+#chat {
+    min-width: 600px;
 }
 
 #mario-chat{
@@ -66,4 +71,9 @@ button{
     padding: 12px 0;
     width: 100%;
     border-radius: 0 0 2px 2px;
+}
+
+.disabled {
+    background: #7b81f5;
+    cursor: not-allowed;
 }
