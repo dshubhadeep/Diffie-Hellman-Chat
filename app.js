@@ -1,5 +1,7 @@
 const express = require("express");
 const socket = require("socket.io");
+const forge = require("node-forge");
+
 const util = require("./utils/primitive-root");
 
 const app = express();
@@ -49,13 +51,12 @@ io.on("connection", socket => {
 	});
 
 	// Handle chat event
-	socket.on("chat", function(data) {
-		// console.log(data);
+	socket.on("chat", data => {
 		io.sockets.emit("chat", data);
 	});
 
 	// Handle typing event
-	socket.on("typing", function(data) {
+	socket.on("typing", data => {
 		socket.broadcast.emit("typing", data);
 	});
 });
